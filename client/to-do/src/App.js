@@ -1,3 +1,5 @@
+import GetTasks from "./Components/GetTasks";
+import Form from "./Components/Form";
 import {
   ApolloClient,
   InMemoryCache,
@@ -19,7 +21,9 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      
+      <Form />
+      <Gettasks />
+
     </ApolloProvider>
   );
 }
