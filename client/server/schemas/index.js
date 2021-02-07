@@ -22,3 +22,26 @@ const RootQuery = new GraphQLObjectType({
     },
   },
 });
+
+const Mutation = new GraphQLObjectType({
+  name: "Mutation",
+  fields: {
+    createTask: {
+      type: TaskType,
+      args: {
+        title: { type: GraphQLString },
+        about: { type: GraphQLString },
+      },
+      resolve(parent, args) {
+        taskData.push({
+          id: taskData.length + 1,
+          title: args.title,
+          about: args.about,
+        });
+        return args;
+      },
+    },
+  },
+});
+
+module.exports = new GraphQLSchema({ query: RootQuery, mutation: Mutation });
