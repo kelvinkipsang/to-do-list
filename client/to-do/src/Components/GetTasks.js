@@ -13,10 +13,16 @@ function GetTasks() {
 
   return (
     <div>
-      { {" "}
+      {" "}
       {tasks.map((val) => {
-        return <h1> {val.title}</h1> /* </br> <h3> {val.about}</h3> */ ;
-      })} }
+        return (
+        <h1> {val.title}</h1>,
+        <br/>,  
+        <h3> {val.about}</h3>
+        
+        )  
+      })} 
+
     </div>
   );
 }

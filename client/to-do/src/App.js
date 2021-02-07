@@ -22,7 +22,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Form />
-      <Gettasks />
+      <GetTasks />
 
     </ApolloProvider>
   );
